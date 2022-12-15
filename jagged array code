@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main() {
+
+  int row;
+  cout << "Enter rows" << endl;
+  cin >> row;
+  int *integer = new int[row];
+  int **arr = new int *[row];
+  for (int i = 0; i < row; i++) {
+    cout << "Enter No. of col in row " << i << ":";
+    cin >> integer[i];
+    arr[i] = new int[integer[i]];
+  }
+
+  // input
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < integer[i]; j++) {
+      cout << "Row" << i << ":-Enter value" << i * integer[i] + j << ": ";
+      cin >> arr[i][j];
+    }
+  }
+
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < integer[i]; j++) {
+      cout << arr[i][j] << " ";
+    }
+    cout << endl;
+  }
+}
